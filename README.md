@@ -1,7 +1,7 @@
-# Sistema-Cafeteria
+# Pingado
 Sistema de atendimento de uma cafeteria
 
-### Integrante
+### Integrantes
 
 Guilherme Chaves Volpato
 
