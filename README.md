@@ -5,18 +5,19 @@ https://drawsql.app/teams/pingado/diagrams/pingado
 
 ### Integrantes
 
-Guilherme Chaves Volpato
+GuilhermeVolpato
 
-Luiz Otávio Milanezi
+luizotavio-vieira
 
-Guilherme Marques
+Gabriel Canarin Salazar
 
 Tiago Salles Melo
 
-Gabriel Salazar
-
-Naum Marcirio
+NaumMarcirio
 
 Luiz Miguel 
 
-Diego Hahn
+DiegoHahn
+
+Miguel
+
