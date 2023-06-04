@@ -9,7 +9,7 @@ https://drawsql.app/teams/pingado/diagrams/pingado
 
 luizotavio-vieira
 
-GabrielCanarin
+[GabrielCanarin](https://github.com/GabrielCanarin)
 
 TiagoS4
 
