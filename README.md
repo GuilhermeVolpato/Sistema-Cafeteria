@@ -17,7 +17,7 @@ TiagoS4
 
 GuilhermeMSilveira
 
-DiegoHahn
+[DiegoHahn](https://github.com/DiegoHahn)
 
 Luiz Miguel
 
