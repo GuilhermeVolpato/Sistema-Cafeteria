@@ -5,7 +5,7 @@ https://drawsql.app/teams/pingado/diagrams/pingado
 
 ### Integrantes
 
-GuilhermeVolpato
+[GuilhermeVolpato](https://github.com/GuilhermeVolpato)
 
 luizotavio-vieira
 
