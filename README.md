@@ -15,7 +15,7 @@ TiagoS4
 
 [NaumMarcirio](https://github.com/NaumMarcirio)
 
-GuilhermeMSilveira
+[GuilhermeMSilveira](https://github.com/GuilhermeMSilveira)
 
 [DiegoHahn](https://github.com/DiegoHahn)
 
