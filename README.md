@@ -7,7 +7,7 @@ https://drawsql.app/teams/pingado/diagrams/pingado
 
 [GuilhermeVolpato](https://github.com/GuilhermeVolpato)
 
-luizotavio-vieira
+[luizotavio-vieira](https://github.com/luizotavio-vieira)
 
 [GabrielCanarin](https://github.com/GabrielCanarin)
 
