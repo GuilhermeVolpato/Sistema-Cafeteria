@@ -11,7 +11,7 @@ https://drawsql.app/teams/pingado/diagrams/pingado
 
 [GabrielCanarin](https://github.com/GabrielCanarin)
 
-TiagoS4
+[TiagoS4] (https://github.com/TiagoS4)
 
 [NaumMarcirio](https://github.com/NaumMarcirio)
 
