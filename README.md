@@ -18,8 +18,9 @@ Arquivo fonte: <code>link pro arquivo</code><br>
 <code>Imagem</code>
   
 ### Design do Sistema no Figma:
-https://www.figma.com/file/5RPeXZtVAtRXdfFfnmkJYI/Untitled?type=design&node-id=0%3A1&t=E8NmBcn6LaInScsh-1
-  
+https://www.figma.com/file/5RPeXZtVAtRXdfFfnmkJYI/Untitled?type=design&node-id=0%3A1&t=E8NmBcn6LaInScsh-1  
+
+
 ### Dicionário de Dados:
 <code>Excel ou tabela do Github (markdown)</code>
 
