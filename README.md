@@ -17,8 +17,9 @@ Utilizado https://dbdiagram.io/<br>
 Arquivo fonte: <code>link pro arquivo</code><br>
 <code>Imagem</code>
   
-### Design do Sistema no Figma:
-https://www.figma.com/file/5RPeXZtVAtRXdfFfnmkJYI/Untitled?type=design&node-id=0%3A1&t=E8NmBcn6LaInScsh-1  
+### Design do Sistema:
+Utilizado https://www.figma.com<br>
+Acesso: https://www.figma.com/file/5RPeXZtVAtRXdfFfnmkJYI/Untitled?type=design&node-id=0%3A1&t=E8NmBcn6LaInScsh-1  
 
 
 ### Dicionário de Dados:
