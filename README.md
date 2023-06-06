@@ -3,14 +3,14 @@
 ### Grupo E
 
 ### Integrantes:
-[GuilhermeVolpato](https://github.com/GuilhermeVolpato)
-[luizotavio-vieira](https://github.com/luizotavio-vieira)
-[GabrielCanarin](https://github.com/GabrielCanarin)
-[TiagoS4](https://github.com/TiagoS4)
-[NaumMarcirio](https://github.com/NaumMarcirio)
-[GuilhermeMSilveira](https://github.com/GuilhermeMSilveira)
-[DiegoHahn](https://github.com/DiegoHahn)
-[Miguelito001].(https://github/Miguelito001)
+[GuilhermeVolpato](https://github.com/GuilhermeVolpato)<br>
+[luizotavio-vieira](https://github.com/luizotavio-vieira)<br>
+[GabrielCanarin](https://github.com/GabrielCanarin)<br>
+[TiagoS4](https://github.com/TiagoS4)<br>
+[NaumMarcirio](https://github.com/NaumMarcirio)<br>
+[GuilhermeMSilveira](https://github.com/GuilhermeMSilveira)<br>
+[DiegoHahn](https://github.com/DiegoHahn)<br>
+[Miguelito001](https://github/Miguelito001)
 
 ### Modelo Físico:
 Utilizado https://dbdiagram.io/<br>
