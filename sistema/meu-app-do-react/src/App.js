@@ -37,7 +37,7 @@ const Menu = () => {
         <h2>Adicionar Item</h2>
         <div>
           <label>Nome:</label>
-          <input type="text" name="name" value={newItem.name} onChange={handleInputChange} />
+          <input type="text" name="name" value={newItem.name} onChange={handleInputChange}/>
         </div>
         <div>
           <label>Preço:</label>
