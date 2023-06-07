@@ -1,0 +1,3 @@
+[submodule "api-python"]
+	path = api-python
+	url = https://github.com/GuilhermeVolpato/flask-api-SqlServer.git
