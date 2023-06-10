@@ -39,3 +39,10 @@ Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
 ### Código do sistema:
 Linguagens e tecnologias: React, python, sql server.<br>
 <code>código fonte da aplicação</code>
+
+### Api:
+Leia o readme da api para ver como usar<br>
+não se esqueça de usar os 2 comando a baixo, são necessários pois a api esta como submodule<br>
+git submodule init<br>
+git submodule init<br>
+git submodule update
