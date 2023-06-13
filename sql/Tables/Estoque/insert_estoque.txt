@@ -1,0 +1,6 @@
+INSERT INTO estoque (id_estoque, ingrediente, quantidade, unidade)
+VALUES (1, 'Café', 100, 'Kg'),
+       (2, 'Leite', 200, 'Litros'),
+       (3, 'Açúcar', 50, 'Kg'),
+       (4, 'Chá', 30, 'Kg'),
+       (5, 'Pão', 100, 'Unidades');
