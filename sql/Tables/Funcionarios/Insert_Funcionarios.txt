@@ -1,0 +1,6 @@
+INSERT INTO funcionarios (id_funcionario, nome, sobrenome, telefone, email, cargo, data_contratacao)
+VALUES (1, 'João', 'Silva', '11987654321', 'joao.silva@email.com', 'Garçom', '2023-01-01'),
+       (2, 'Maria', 'Santos', '11987654322', 'maria.santos@email.com', 'Cozinheiro', '2023-01-02'),
+       (3, 'Pedro', 'Oliveira', '11987654323', 'pedro.oliveira@email.com', 'Garçom', '2023-01-03'),
+       (4, 'Ana', 'Costa', '11987654324', 'ana.costa@email.com', 'Gerente', '2023-01-04'),
+       (5, 'Lucas', 'Souza', '11987654325', 'lucas.souza@email.com', 'Cozinheiro', '2023-01-05');
