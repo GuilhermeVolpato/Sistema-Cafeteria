@@ -1,0 +1,6 @@
+INSERT INTO cardapio (id_item_cardapio, nome_item, valor, descricao, categoria, disponibilidade)
+VALUES (1, 'Café Expresso', 3.00, 'Café expresso simples', 'Bebidas', 1),
+       (2, 'Cappuccino', 6.00, 'Café com leite e espuma de leite', 'Bebidas', 1),
+       (3, 'Chá', 4.00, 'Chá de ervas naturais', 'Bebidas', 1),
+       (4, 'Pão na Chapa', 2.00, 'Pão francês na chapa com manteiga', 'Comidas', 1),
+       (5, 'Torrada', 1.50, 'Torrada com manteiga', 'Comidas', 1);
