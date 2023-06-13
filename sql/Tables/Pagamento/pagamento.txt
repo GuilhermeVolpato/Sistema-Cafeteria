@@ -1,0 +1,8 @@
+CREATE TABLE "pagamento"(
+    "id_pagamento" INT NOT NULL,
+    "tipo" VARCHAR(255) NOT NULL,
+    "status" BIT NOT NULL,
+    "taxa" FLOAT NOT NULL
+);
+ALTER TABLE
+    "pagamento" ADD CONSTRAINT "pagamento_id_pagamento_primary" PRIMARY KEY("id_pagamento");

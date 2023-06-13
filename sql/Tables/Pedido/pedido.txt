@@ -1,0 +1,15 @@
+CREATE TABLE "pedido"(
+    "id_pedido" BIGINT NOT NULL,
+    "id_comanda" BIGINT NOT NULL,
+    "id_cardapio" INT NOT NULL,
+    "status" BIT NOT NULL,
+    "data_hora_pedido" DATETIME NOT NULL,
+    "quantidade" INT NOT NULL
+);
+
+ALTER TABLE
+    "pedido" ADD CONSTRAINT "pedido_id_pedido_primary" PRIMARY KEY("id_pedido");
+ALTER TABLE
+    "pedido" ADD CONSTRAINT "pedido_id_cardapio_foreign" FOREIGN KEY("id_cardapio") REFERENCES "cardapio"("id_item_cardapio");
+ALTER TABLE
+    "pedido" ADD CONSTRAINT "pedido_id_comanda_foreign" FOREIGN KEY("id_comanda") REFERENCES "comanda"("id_comanda");

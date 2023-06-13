@@ -1,0 +1,16 @@
+CREATE TABLE "comanda"(
+    "id_comanda" BIGINT NOT NULL,
+    "id_mesa" INT NOT NULL,
+    "id_pagamento" INT NOT NULL,
+    "id_funcionario" INT NOT NULL,
+    "valor_total" FLOAT NOT NULL
+);
+ALTER TABLE
+    "comanda" ADD CONSTRAINT "comanda_id_comanda_primary" PRIMARY KEY("id_comanda");
+ALTER TABLE
+    "comanda" ADD CONSTRAINT "comanda_id_funcionario_foreign" FOREIGN KEY("id_funcionario") REFERENCES "funcionarios"("id_funcionario");
+ALTER TABLE
+    "comanda" ADD CONSTRAINT "comanda_id_mesa_foreign" FOREIGN KEY("id_mesa") REFERENCES "mesas"("id_mesa");
+ALTER TABLE
+    "comanda" ADD CONSTRAINT "comanda_id_pagamento_foreign" FOREIGN KEY("id_pagamento") REFERENCES "pagamento"("id_pagamento");
+

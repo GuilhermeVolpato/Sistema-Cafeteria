@@ -1,0 +1,8 @@
+CREATE TABLE "estoque"(
+    "id_estoque" INT NOT NULL,
+    "ingrediente" VARCHAR(255) NOT NULL,
+    "quantidade" FLOAT NOT NULL,
+    "unidade" VARCHAR(255) NULL
+);
+ALTER TABLE
+    "estoque" ADD CONSTRAINT "estoque_id_estoque_primary" PRIMARY KEY("id_estoque");

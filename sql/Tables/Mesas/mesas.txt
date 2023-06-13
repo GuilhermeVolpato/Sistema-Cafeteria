@@ -1,0 +1,8 @@
+CREATE TABLE "mesas"(
+    "id_mesa" INT NOT NULL,
+    "qtd_lugares" INT NOT NULL,
+    "local" VARCHAR(255) NOT NULL,
+    "status" BIT NOT NULL
+);
+ALTER TABLE
+    "mesas" ADD CONSTRAINT "mesas_id_mesa_primary" PRIMARY KEY("id_mesa");
