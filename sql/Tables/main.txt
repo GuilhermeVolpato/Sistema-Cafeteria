@@ -26,6 +26,11 @@ CREATE TABLE "ingredientes"(
     "quantidade" INT NOT NULL,
     "unidade" VARCHAR(255) NULL
 );
+CREATE INDEX "ingredientes_id_item_cardapio_index" ON
+    "ingredientes"("id_item_cardapio");
+    
+CREATE INDEX "ingredientes_id_estoque_index" ON
+    "ingredientes"("id_estoque");
 
 
 
@@ -37,6 +42,8 @@ CREATE TABLE "estoque"(
 );
 ALTER TABLE
     "estoque" ADD CONSTRAINT "estoque_id_estoque_primary" PRIMARY KEY("id_estoque");
+CREATE INDEX "estoque_ingrediente_index" ON
+    "estoque"("ingrediente");
 
 
 
@@ -93,7 +100,8 @@ CREATE TABLE "pedido"(
 
 ALTER TABLE
     "pedido" ADD CONSTRAINT "pedido_id_pedido_primary" PRIMARY KEY("id_pedido");
-
+CREATE INDEX "pedido_data_hora_pedido_index" ON
+    "pedido"("data_hora_pedido");
 
 
 
