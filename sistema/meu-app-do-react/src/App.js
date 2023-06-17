@@ -49,19 +49,15 @@ const App = () => {
   // };
 
   async function getCardapio() {
-    axios({
-      method: "get",
-      url: "http://127.0.0.1/5000/cardapio/read",
-      responseType: "stream",
-    }).then(function (response) {
-      console.log(response);
-      setCardapio(cardapio);
-    });
+    await axios.get("http://127.0.0.1:5000/cardapio/read").then((response) => {
+      setCardapio(response.data.cardapio);
+      console.log(response.data.cardapio);
+    })
   }
 
   async function insertCardapio() {
     await axios
-      .post("http://127.0.0.1/5000/cardapio/insert", {
+      .post("http://127.0.0.1:5000/cardapio/insert", {
         id_item_cardapio: id_item_cardapio,
         nome_item: nome_item,
         valor: valor,
@@ -79,28 +75,32 @@ const App = () => {
         console.log(error);
       });
   }
-
-  async function updateCardapio() {
+  // setCategoria("");
+  // setDisponibilidade("");
+  async function updateCardapio(e) {
+    e.preventDefault();
     await axios
-      .post("http://127.0.0.1/5000/cardapio/update", {
-        id_item_cardapio: id_item_cardapio,
-        nome_item: nome_item,
-        valor: valor,
-        descricao: descricao,
-        categoria: categoria,
-        disponibilidade: disponibilidade,
+      .post("http://127.0.0.1:5000/cardapio/update", {
+        id_item_cardapio: id_item_cardapio? id_item_cardapio : null,
+        nome_item: nome_item? nome_item : null,
+        valor: valor? valor : null,
+        descricao: descricao? descricao : null,
+        categoria: categoria? categoria : null,
+        disponibilidade: disponibilidade? disponibilidade : null,
       })
       .then(function (response) {
+        alert("Item atualizado com sucesso!");
         console.log(response);
       })
       .catch(function (error) {
+        alert("Erro ao atualizar item!", error);
         console.log(error);
       });
   }
 
   async function deleteCardapio() {
     await axios
-      .post("http://127.0.0.1/5000/cardapio/update", {
+      .post("http://127.0.0.1:5000/cardapio/update", {
         id_item_cardapio: id_item_cardapio,
       })
       .then(function (response) {
@@ -112,6 +112,9 @@ const App = () => {
   }
 
   useEffect(() => {
+    setId_item_cardapio(2);
+    setValor(200);
+    setDescricao("Cafe Macchiato frances");
     getCardapio();
   }, []);
 
@@ -141,7 +144,7 @@ const App = () => {
             {cardapio.map((item) => (
               <li
                 key={item.id}
-                className="flex items-center justify-between p-4 mb-4 bg-gray-900 rounded-md"
+                className="flex items-center justify-between p-4 mb-4 rounded-md"
               >
                 <div className="justify-center items-center mb-4">
                   <div className="flex flex-row">
@@ -158,6 +161,7 @@ const App = () => {
                 </div>
               </li>
             ))}
+            <button onClick={updateCardapio}> CLICA AQUIIIII</button>
           </div>
           <img
             src={rectangle}
@@ -169,6 +173,7 @@ const App = () => {
             alt="Rectangle"
             className="absolute -left-14 -bottom-12 scale-80"
           />
+          
         </div>
       </div>
     )
