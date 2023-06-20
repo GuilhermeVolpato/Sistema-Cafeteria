@@ -1,11 +1,11 @@
 CREATE TABLE "funcionarios"(
     "id_funcionario" INT NOT NULL,
-    "nome" VARCHAR(255) NOT NULL,
-    "sobrenome" VARCHAR(255) NOT NULL,
-    "telefone" VARCHAR(255) NOT NULL,
-    "email" VARCHAR(255) NULL,
-    "cargo" VARCHAR(255) NOT NULL,
-    "data_contratacao" VARCHAR(255) NOT NULL
+    "nome" VARCHAR(20) NOT NULL,
+    "sobrenome" VARCHAR(50) NOT NULL,
+    "telefone" VARCHAR(30) NOT NULL,
+    "email" VARCHAR(50) NULL,
+    "cargo" VARCHAR(20) NOT NULL,
+    "data_contratacao" VARCHAR(30) NOT NULL
 );
 ALTER TABLE
     "funcionarios" ADD CONSTRAINT "funcionarios_id_funcionario_primary" PRIMARY KEY("id_funcionario");

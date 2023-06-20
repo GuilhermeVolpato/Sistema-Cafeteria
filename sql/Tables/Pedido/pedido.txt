@@ -1,6 +1,6 @@
 CREATE TABLE "pedido"(
-    "id_pedido" BIGINT NOT NULL,
-    "id_comanda" BIGINT NOT NULL,
+    "id_pedido" INT NOT NULL,
+    "id_comanda" INT NOT NULL,
     "id_cardapio" INT NOT NULL,
     "status" BIT NOT NULL,
     "data_hora_pedido" DATETIME NOT NULL,

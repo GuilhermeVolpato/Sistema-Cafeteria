@@ -1,9 +1,9 @@
 CREATE TABLE "cardapio"(
     "id_item_cardapio" INT NOT NULL,
-    "nome_item" VARCHAR(255) NOT NULL,
+    "nome_item" VARCHAR(30) NOT NULL,
     "valor" FLOAT NOT NULL,
-    "descricao" VARCHAR(255) NOT NULL,
-    "categoria" VARCHAR(255) NOT NULL,
+    "descricao" VARCHAR(80) NOT NULL,
+    "categoria" VARCHAR(30) NOT NULL,
     "disponibilidade" BIT NOT NULL
 );
 ALTER TABLE

@@ -1,6 +1,6 @@
 CREATE TABLE "pagamento"(
     "id_pagamento" INT NOT NULL,
-    "tipo" VARCHAR(255) NOT NULL,
+    "tipo" VARCHAR(25) NOT NULL,
     "status" BIT NOT NULL,
     "taxa" FLOAT NOT NULL
 );

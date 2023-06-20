@@ -2,7 +2,7 @@ CREATE TABLE "ingredientes"(
     "id_item_cardapio" INT NOT NULL,
     "id_estoque" INT NOT NULL,
     "quantidade" INT NOT NULL,
-    "unidade" VARCHAR(255) NULL
+    "unidade" VARCHAR(10) NULL
 );
 
 ALTER TABLE

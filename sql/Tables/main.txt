@@ -28,14 +28,17 @@ CREATE TABLE "ingredientes"(
 );
 
 
+
 CREATE TABLE "estoque"(
     "id_estoque" INT NOT NULL,
-    "ingrediente" VARCHAR(255) NOT NULL,
+    "ingrediente" VARCHAR(30) NOT NULL,
     "quantidade" FLOAT NOT NULL,
     "unidade" VARCHAR(10) NULL
 );
 ALTER TABLE
     "estoque" ADD CONSTRAINT "estoque_id_estoque_primary" PRIMARY KEY("id_estoque");
+
+
 
 
 CREATE TABLE "funcionarios"(
@@ -45,7 +48,7 @@ CREATE TABLE "funcionarios"(
     "telefone" VARCHAR(30) NOT NULL,
     "email" VARCHAR(50) NULL,
     "cargo" VARCHAR(20) NOT NULL,
-    "data_contratacao" DATETIME NOT NULL
+    "data_contratacao" VARCHAR(30) NOT NULL
 );
 ALTER TABLE
     "funcionarios" ADD CONSTRAINT "funcionarios_id_funcionario_primary" PRIMARY KEY("id_funcionario");
@@ -90,6 +93,7 @@ CREATE TABLE "pedido"(
 
 ALTER TABLE
     "pedido" ADD CONSTRAINT "pedido_id_pedido_primary" PRIMARY KEY("id_pedido");
+
 
 
 
