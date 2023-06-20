@@ -74,7 +74,7 @@ CREATE INDEX "cardapio_nome_item_index" ON
 CREATE TABLE "mesas"(
     "id_mesa" INT NOT NULL,
     "qtd_lugares" INT NOT NULL,
-    "local" VARCHAR(2) NOT NULL,
+    "local" VARCHAR(100) NOT NULL,
     "status" BIT NOT NULL
 );
 ALTER TABLE
