@@ -1,5 +1,5 @@
 CREATE TABLE "comanda"(
-    "id_comanda" BIGINT NOT NULL,
+    "id_comanda" INT NOT NULL,
     "id_mesa" INT NOT NULL,
     "id_pagamento" INT NOT NULL,
     "id_funcionario" INT NOT NULL,
