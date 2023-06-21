@@ -1,0 +1,14 @@
+CREATE TRIGGER AtualizarValorComanda
+ON pedido
+AFTER INSERT
+AS
+BEGIN
+    UPDATE comanda
+    SET valor_total = valor_total + (
+        SELECT SUM(i.quantidade * c.valor)
+        FROM inserted AS i
+        INNER JOIN cardapio AS c ON i.id_cardapio = c.id_item_cardapio
+        WHERE i.id_comanda = comanda.id_comanda
+    )
+    WHERE id_comanda IN (SELECT id_comanda FROM inserted);
+END;
