@@ -1,0 +1,40 @@
+CREATE FUNCTION dbo.FuncionarioDoMes 
+(
+    -- Definindo os parâmetros de entrada da função, que são as datas de início e fim do período
+    @DataInicio DATE,
+    @DataFim DATE
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+    SELECT TOP 1
+        -- Seleciona o id do funcionário, nome, sobrenome e total de vendas
+        funcionarios.id_funcionario,
+        funcionarios.nome,
+        funcionarios.sobrenome,
+
+        -- Calcula o total de vendas do funcionário no período especificado
+        COUNT(pedido.id_pedido) AS TotalPedidos,
+
+        -- Calcula o valor total das vendas do funcionário no período especificado
+        SUM(comanda.valor_total) AS ValorTotalVendas
+        
+    FROM 
+        -- Tabela de funcionários
+        funcionarios
+        
+    -- Junta as tabelas de funcionários, comandas e pedidos  para identificar a relação entre o funcionário e seus pedidos
+    INNER JOIN comanda ON funcionarios.id_funcionario = comanda.id_funcionario
+    INNER JOIN pedido ON comanda.id_comanda = pedido.id_comanda
+    
+    -- Restringe a seleção ao período de tempo especificado
+    WHERE pedido.data_hora_pedido BETWEEN @DataInicio AND @DataFim
+    
+    -- Agrupa os resultados pelo id, nome e sobrenome e ordena os resultados pelo valor total das vendas, do maior para o menor
+    GROUP BY funcionarios.id_funcionario, funcionarios.nome, funcionarios.sobrenome
+    ORDER BY ValorTotalVendas DESC
+);
+
+-- Chama a função para o período de um mês
+SELECT * FROM dbo.FuncionarioDoMes('2023-06-01', '2023-06-30');
