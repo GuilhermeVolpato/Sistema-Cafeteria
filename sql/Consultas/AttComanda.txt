@@ -5,10 +5,10 @@ AS
 BEGIN
     UPDATE comanda
     SET valor_total = valor_total + (
-        SELECT SUM(i.quantidade * c.valor)
-        FROM inserted AS i
-        INNER JOIN cardapio AS c ON i.id_cardapio = c.id_item_cardapio
-        WHERE i.id_comanda = comanda.id_comanda
+        SELECT SUM(p.quantidade * c.valor)
+        FROM pedido AS p
+        INNER JOIN cardapio AS c ON p.id_cardapio = c.id_item_cardapio
+        WHERE p.id_comanda = comanda.id_comanda
     )
-    WHERE id_comanda IN (SELECT id_comanda FROM inserted);
+    WHERE id_comanda IN (SELECT id_comanda FROM pedido);
 END;
