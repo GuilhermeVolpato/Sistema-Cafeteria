@@ -52,6 +52,10 @@ const App = () => {
       });
   }
 
+  useEffect(() => {
+    getCardapio();
+  }, []);
+
   async function insertCardapio() {
     await axios
       .post("http://127.0.0.1:5000/cardapio/insert", {
@@ -141,10 +145,6 @@ const App = () => {
     handleModalClose();
   };
 
-  useEffect(() => {
-    getCardapio();
-  }, [inputs, newItem, modalType]);
-
   return (
     cardapio && (
       <div className="h-screen w-screen bg-gradient-to-tr from-amber-700 opacity-95 from-5% via-orange-200 to-amber-700 to-99% flex justify-center items-center">
@@ -168,64 +168,77 @@ const App = () => {
             <div className="h-1 w-44 bg-amber-800 absolute left-1/2 top-36 transform -translate-x-1/2 -translate-y-1/2 "></div>
             <div className="mb-44"></div>
 
-            {cardapio.map((item) => (
-              <li
-                key={item.id}
-                className="flex items-center justify-between p-2 mb-4 rounded-md"
-              >
-                <div className="justify-center items-center">
-                  <div className="flex flex-row space-x-8">
-                    <div className="ml-40 flex flex-row space-x-435px ">
-                      <h1 className="text-amber-950 text-2xl">
-                        {item.nome_item}
-                      </h1>
-                      <h2 className="text-amber-950 text-xl">{item.valor}</h2>
-                    </div>
-                  </div>
-                  <div className="ml-52 mt-2">
-                    <h6 className="text-amber-950 text-lg">{item.descricao}</h6>
-                    <div className=" flex flex-row">
-                      <h6 className="text-amber-950 text-lg">Xícara x ml</h6>
-                      <div className="ml-64">
-                        <img
-                          src={peninha}
-                          alt="Rectangle"
-                          onClick={() =>
-                            handleOpenModal("newItem", item.id_item_cardapio)
-                          }
-                          onMouseDown={() => {
-                            const timeout = setTimeout(() => {
-                              setIsLongPressing(true);
-                              if (isLongPressing) {
-                                deleteCardapio(item.id_item_cardapio);
+            {cardapio.map((item) => {
+              if (item.disponibilidade) {
+                return (
+                  <li
+                    key={item.id_item_cardapio}
+                    className="flex items-center justify-between p-2 mb-4 rounded-md"
+                  >
+                    <div className="justify-center items-center">
+                      <div className="flex flex-row space-x-8">
+                        <div className="ml-40 flex flex-row space-x-435px ">
+                          <h1 className="text-amber-950 text-2xl">
+                            {item.nome_item}
+                          </h1>
+                          <h2 className="text-amber-950 text-xl">
+                            {item.valor}
+                          </h2>
+                        </div>
+                      </div>
+                      <div className="ml-52 mt-2">
+                        <h6 className="text-amber-950 text-lg">
+                          {item.descricao}
+                        </h6>
+                        <div className=" flex flex-row">
+                          <h6 className="text-amber-950 text-lg">
+                            Xícara x ml
+                          </h6>
+                          <div className="ml-64">
+                            <img
+                              src={peninha}
+                              alt="Rectangle"
+                              onClick={() =>
+                                handleOpenModal(
+                                  "newItem",
+                                  item.id_item_cardapio
+                                )
                               }
-                            }, 500);
-                            setLongPressTimeout(timeout);
-                          }}
-                          onMouseUp={() => {
-                            clearTimeout(longPressTimeout);
-                            setIsLongPressing(false);
-                          }}
-                          onTouchStart={() => {
-                            const timeout = setTimeout(() => {
-                              setIsLongPressing(true);
-                              if (isLongPressing) {
-                                deleteCardapio(item.id_item_cardapio);
-                              }
-                            }, 500);
-                            setLongPressTimeout(timeout);
-                          }}
-                          onTouchEnd={() => {
-                            clearTimeout(longPressTimeout);
-                            setIsLongPressing(false);
-                          }}
-                        />
+                              onMouseDown={() => {
+                                const timeout = setTimeout(() => {
+                                  setIsLongPressing(true);
+                                  if (isLongPressing) {
+                                    deleteCardapio(item.id_item_cardapio);
+                                  }
+                                }, 500);
+                                setLongPressTimeout(timeout);
+                              }}
+                              onMouseUp={() => {
+                                clearTimeout(longPressTimeout);
+                                setIsLongPressing(false);
+                              }}
+                              onTouchStart={() => {
+                                const timeout = setTimeout(() => {
+                                  setIsLongPressing(true);
+                                  if (isLongPressing) {
+                                    deleteCardapio(item.id_item_cardapio);
+                                  }
+                                }, 500);
+                                setLongPressTimeout(timeout);
+                              }}
+                              onTouchEnd={() => {
+                                clearTimeout(longPressTimeout);
+                                setIsLongPressing(false);
+                              }}
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </li>
-            ))}
+                  </li>
+                );
+              }
+            })}
 
             <div className="fixed bottom-20 ml-80 left-96 right-0 flex justify-center mb-8">
               <div className="bg-green-400 px-4 rounded-xl">

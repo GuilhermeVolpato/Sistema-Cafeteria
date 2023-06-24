@@ -8,9 +8,19 @@ const Modal = ({
   handleClose,
   handleFormSubmit,
 }) => {
+  const [displayedInputs, setDisplayedInputs] = useState({});
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+    setDisplayedInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+  };
+
+  const handleAddIngredients = (e) => {
+    e.preventDefault();
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      ...displayedInputs
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -34,6 +44,10 @@ const Modal = ({
     };
   }, [isOpen, handleClose, inputs]);
 
+  useEffect(() => {
+    setDisplayedInputs(inputs);
+  }, [inputs]);
+
   if (!isOpen) {
     return null;
   }
@@ -47,7 +61,7 @@ const Modal = ({
           {type === "newItem" ? "Atualizar item" : "Inserir novo item"}
         </h2>
         <form onSubmit={handleSubmit}>
-          {Object.keys(inputs).map((key) => (
+          {Object.keys(displayedInputs).map((key) => (
             <div className="mb-4" key={key}>
               <label htmlFor={key} className="mr-2">
                 {key}:
@@ -56,14 +70,36 @@ const Modal = ({
                 type="text"
                 id={key}
                 name={key}
-                value={inputs[key]}
+                value={displayedInputs[key]}
                 onChange={handleInputChange}
               />
             </div>
           ))}
-          <button type="submit" className="bg-green-400 px-4 rounded-xl">
-            Submit
-          </button>
+
+          {type === "inputs" && (
+            <div>
+              <button
+                type="submit"
+                className="bg-green-400 px-4 rounded-xl"
+                onClick={handleAddIngredients}
+              >
+                Adicionar ingredientes
+              </button>
+              <button
+                type="button"
+                className="bg-red-400 px-4 rounded-xl"
+                onClick={removeInputs}
+              >
+                Remover ingredientes
+              </button>
+            </div>
+          )}
+
+          {type !== "inputs" && (
+            <button type="submit" className="bg-green-400 px-4 rounded-xl">
+              Submit
+            </button>
+          )}
         </form>
       </div>
     </div>
