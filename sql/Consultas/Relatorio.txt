@@ -1,4 +1,4 @@
-ALTER PROCEDURE GerarRelatorioCardapio
+CREATE PROCEDURE GerarRelatorioCardapio
     @dataInicio DATE,
     @dataFim DATE
 AS
