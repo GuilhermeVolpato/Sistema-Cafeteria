@@ -1,6 +1,12 @@
 INSERT INTO cardapio (id_item_cardapio, nome_item, valor, descricao, categoria, disponibilidade)
-VALUES (1, 'Café Expresso', 3.00, 'Café expresso simples', 'Bebidas', 1),
-       (2, 'Cappuccino', 6.00, 'Café com leite e espuma de leite', 'Bebidas', 1),
-       (3, 'Chá', 4.00, 'Chá de ervas naturais', 'Bebidas', 1),
-       (4, 'Pão na Chapa', 2.00, 'Pão francês na chapa com manteiga', 'Comidas', 1),
-       (5, 'Torrada', 1.50, 'Torrada com manteiga', 'Comidas', 1);
+VALUES 
+	(1, 'Café Expresso', 3.00, 'Café expresso forte', 'Bebidas', 1), 
+	(2, 'Capuccino', 6.00, 'Capuccino com chantilly', 'Bebidas', 1),
+	(3, 'Chocolate Quente', 5.00, 'Chocolate quente com marshmallows', 'Bebidas', 1),
+	(4, 'Pão na Chapa', 3.00, 'Pão na chapa com manteiga', 'Comidas', 1),
+	(5, 'Torrada', 2.00, 'Torrada com geleia de morango', 'Comidas', 1),
+	(6, 'Misto Quente', 5.00, 'Misto quente com queijo e presunto', 'Comidas', 1),
+	(7, 'Café com Leite', 4.00, 'Café com leite cremoso', 'Bebidas', 1),
+	(8, 'Bolo de Chocolate', 4.50, 'Bolo de chocolate com cobertura', 'Doces', 1),
+	(9, 'Suco de Laranja', 5.00, 'Suco de laranja natural', 'Bebidas', 1),
+	(10, 'Pão de Queijo', 3.50, 'Pão de queijo mineiro', 'Comidas', 1);
