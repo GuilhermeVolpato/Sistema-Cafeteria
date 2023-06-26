@@ -3,7 +3,8 @@ BEGIN
     SET DATEFIRST 1; 
 
     SELECT 
-     
+
+	CASE
             WHEN DATEPART(dw, p.data_hora_pedido) = 1 THEN 'Segunda-feira'
             WHEN DATEPART(dw, p.data_hora_pedido) = 2 THEN 'Terça-feira'
             WHEN DATEPART(dw, p.data_hora_pedido) = 3 THEN 'Quarta-feira'
