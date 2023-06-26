@@ -1,6 +1,12 @@
 INSERT INTO mesas (id_mesa, qtd_lugares, local, status)
-VALUES (1, 4, 'Perto da janela', 1),
-       (2, 2, 'Perto da porta', 1),
-       (3, 6, 'No centro', 0),
-       (4, 4, 'No fundo', 1),
-       (5, 2, 'Perto do balcão', 0);
+VALUES 
+	(1, 4, 'Perto da janela', 1), 
+	(2, 2, 'Perto da porta', 1), 
+	(3, 4, 'No fundo', 1), 
+	(4, 2, 'No balcão', 1), 
+	(5, 4, 'Na varanda', 1), 
+	(6, 2, 'No corredor', 1), 
+	(7, 4, 'Na entrada', 1), 
+	(8, 2, 'Perto do banheiro', 1), 
+	(9, 4, 'No mezanino', 1), 
+	(10, 2, 'Na calçada', 1);
