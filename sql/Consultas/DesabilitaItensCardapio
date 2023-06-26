@@ -13,3 +13,9 @@ BEGIN
 END;
 
 EXEC DesabilitaItensCardapio
+
+
+
+UPDATE estoque
+SET quantidade = 0
+WHERE id_estoque = 3
