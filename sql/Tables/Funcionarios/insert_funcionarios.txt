@@ -1,6 +1,12 @@
 INSERT INTO funcionarios (id_funcionario, nome, sobrenome, telefone, email, cargo, data_contratacao)
-VALUES (1, 'João', 'Silva', '11987654321', 'joao.silva@email.com', 'Garçom', '2023-01-01'),
-       (2, 'Maria', 'Santos', '11987654322', 'maria.santos@email.com', 'Cozinheiro', '2023-01-02'),
-       (3, 'Pedro', 'Oliveira', '11987654323', 'pedro.oliveira@email.com', 'Garçom', '2023-01-03'),
-       (4, 'Ana', 'Costa', '11987654324', 'ana.costa@email.com', 'Gerente', '2023-01-04'),
-       (5, 'Lucas', 'Souza', '11987654325', 'lucas.souza@email.com', 'Cozinheiro', '2023-01-05');
+VALUES 
+	(1, 'João', 'Silva', '999999999', 'joao.silva@email.com', 'Garçom', '2023-01-01'),
+	(2, 'Maria', 'Oliveira', '888888888', 'maria.oliveira@email.com', 'Cozinheiro', '2023-02-01'),
+	(3, 'Pedro', 'Santos', '777777777', 'pedro.santos@email.com', 'Gerente', '2023-03-01'),
+	(4, 'Ana', 'Costa', '666666666', 'ana.costa@email.com', 'Atendente', '2023-04-01'),
+	(5, 'Lucas', 'Pereira', '555555555', 'lucas.pereira@email.com', 'Garçom', '2023-05-01'),
+	(6, 'Julia', 'Rocha', '444444444', 'julia.rocha@email.com', 'Cozinheiro', '2023-06-01'),
+	(7, 'Gabriel', 'Melo', '333333333', 'gabriel.melo@email.com', 'Garçom', '2023-07-01'),
+	(8, 'Carla', 'Barros', '222222222', 'carla.barros@email.com', 'Atendente', '2023-08-01'),
+	(9, 'Roberto', 'Ribeiro', '111111111', 'roberto.ribeiro@email.com', 'Garçom', '2023-09-01'),
+	(10, 'Fernanda', 'Morais', '000000000', 'fernanda.morais@email.com', 'Gerente', '2023-10-01');
