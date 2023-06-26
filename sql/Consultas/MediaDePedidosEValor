@@ -1,0 +1,13 @@
+CREATE PROCEDURE SP_MediaPedidosEValorPorComanda AS
+BEGIN
+
+    SELECT AVG(QtdItens) AS MediaPedidosPorComanda, AVG(ValorTotal) AS MediaValorPorComanda
+    FROM
+    (
+        SELECT comanda.id_comanda, COUNT(pedido.id_pedido) AS QtdItens, comanda.valor_total AS ValorTotal
+        FROM comanda
+        JOIN pedido ON pedido.id_comanda = comanda.id_comanda
+        GROUP BY comanda.id_comanda, comanda.valor_total
+
+    ) AS SubConsulta
+END;
