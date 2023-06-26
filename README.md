@@ -14,8 +14,7 @@
 
 ### Modelo Físico:
 Utilizado [https://dbdiagram.io/]<br>
-Arquivo fonte: [https://dbdiagram.io/d/6488f970722eb77494e9634e]<code>link pro arquivo</code><br>
-<code>Imagem</code>
+Arquivo fonte: [https://dbdiagram.io/d/6499ee8e02bd1c4a5e18a355]<code>link pro arquivo</code><br>
   
 ### Design do Sistema:
 Utilizado https://www.figma.com<br>
