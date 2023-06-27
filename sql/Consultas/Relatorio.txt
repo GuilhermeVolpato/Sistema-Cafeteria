@@ -3,6 +3,7 @@ CREATE PROCEDURE GerarRelatorioCardapio
     @dataFim DATE
 AS
 BEGIN
+SET NOCOUNT ON
     CREATE TABLE #temp_relatorio_cardapio (
         nome_item VARCHAR(30),
         total_pedidos INT,
