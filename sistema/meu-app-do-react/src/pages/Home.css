@@ -1,0 +1,28 @@
+.dots {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.dots::before,
+.dots::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: black;
+}
+
+.dots::before {
+  margin-right: 0.5rem;
+}
+
+.dots::after {
+  margin-left: 0.5rem;
+}
