@@ -3,26 +3,54 @@ import axios from 'axios';
 
 function Relatorio({ data }) {
   const [relatorio, setRelatorio] = useState([]);
+  const [dataInicio, setDataInicio] = useState('');
+  const [dataFim, setDataFim] = useState('');
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post('http://127.0.0.1:5000/relatorio', {
-          dataInicio: '2022-06-01', // Replace with your desired start date
-          dataFim: '2023-06-30', // Replace with your desired end date
-        });
-        console.log(response.data.relatorio);
-        setRelatorio(response.data.relatorio);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     fetchData();
-  }, []);
+  }, [dataInicio, dataFim]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/relatorio', {
+        dataInicio,
+        dataFim,
+      });
+      console.log(response.data.relatorio);
+      setRelatorio(response.data.relatorio);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchData();
+  };
 
   return (
     <div className="p-8">
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="dataInicio">Data de Início:</label>
+          <input
+            type="text"
+            id="dataInicio"
+            value={dataInicio}
+            onChange={(e) => setDataInicio(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="dataFim">Data de Fim:</label>
+          <input
+            type="text"
+            id="dataFim"
+            value={dataFim}
+            onChange={(e) => setDataFim(e.target.value)}
+          />
+        </div>
+        <button type="submit">Gerar Relatório</button>
+      </form>
       <div className="overflow-x-auto">
         <table className="table-auto w-full border border-gray-300">
           <thead>
