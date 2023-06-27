@@ -22,5 +22,4 @@ RETURN
     ORDER BY TotalComanda DESC
 );
 
--- Chama a função para o período de um mês
 SELECT * FROM dbo.FuncionarioDoMes('2023-06-01', '2023-06-30');
