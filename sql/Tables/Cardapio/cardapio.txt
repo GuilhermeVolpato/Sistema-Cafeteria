@@ -1,0 +1,12 @@
+CREATE TABLE "cardapio"(
+    "id_item_cardapio" INT NOT NULL,
+    "nome_item" VARCHAR(30) NOT NULL,
+    "valor" FLOAT NOT NULL,
+    "descricao" VARCHAR(80) NOT NULL,
+    "categoria" VARCHAR(30) NOT NULL,
+    "disponibilidade" BIT NOT NULL
+);
+ALTER TABLE
+    "cardapio" ADD CONSTRAINT "cardapio_id_item_cardapio_primary" PRIMARY KEY("id_item_cardapio");
+CREATE INDEX "cardapio_nome_item_index" ON
+    "cardapio"("nome_item");

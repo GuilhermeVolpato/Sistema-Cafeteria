@@ -1,0 +1,22 @@
+CREATE PROCEDURE DiaMaisMovimentado AS
+BEGIN
+    SET DATEFIRST 1; 
+
+    SELECT 
+
+	CASE
+            WHEN DATEPART(dw, p.data_hora_pedido) = 1 THEN 'Segunda-feira'
+            WHEN DATEPART(dw, p.data_hora_pedido) = 2 THEN 'Terça-feira'
+            WHEN DATEPART(dw, p.data_hora_pedido) = 3 THEN 'Quarta-feira'
+            WHEN DATEPART(dw, p.data_hora_pedido) = 4 THEN 'Quinta-feira'
+            WHEN DATEPART(dw, p.data_hora_pedido) = 5 THEN 'Sexta-feira'
+            WHEN DATEPART(dw, p.data_hora_pedido) = 6 THEN 'Sábado'
+            WHEN DATEPART(dw, p.data_hora_pedido) = 7 THEN 'Domingo'
+        END AS DiaDaSemana, 
+
+        COUNT(*) as NumeroDePedidos
+		FROM pedido as p
+
+    GROUP BY DATEPART(dw, p.data_hora_pedido)
+    ORDER BY NumeroDePedidos DESC;
+END;

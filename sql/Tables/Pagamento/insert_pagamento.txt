@@ -1,0 +1,6 @@
+INSERT INTO pagamento (id_pagamento, tipo, status, taxa)
+VALUES (1, 'Dinheiro', 1, 0),
+       (2, 'Cartão de Crédito', 1, 0.02),
+       (3, 'Cartão de Débito', 1, 0.01),
+       (4, 'Vale Refeição', 1, 0.05),
+       (5, 'Pix', 1, 0);

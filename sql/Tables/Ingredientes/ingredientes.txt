@@ -1,0 +1,11 @@
+CREATE TABLE "ingredientes"(
+    "id_item_cardapio" INT NOT NULL,
+    "id_estoque" INT NOT NULL,
+    "quantidade" INT NOT NULL,
+    "unidade" VARCHAR(10) NULL
+);
+
+ALTER TABLE
+    "ingredientes" ADD CONSTRAINT "ingredientes_id_estoque_foreign" FOREIGN KEY("id_estoque") REFERENCES "estoque"("id_estoque");
+ALTER TABLE
+    "ingredientes" ADD CONSTRAINT "ingredientes_id_item_cardapio_foreign" FOREIGN KEY("id_item_cardapio") REFERENCES "cardapio"("id_item_cardapio");

@@ -1,0 +1,21 @@
+CREATE PROCEDURE DesabilitaItensCardapio AS
+BEGIN
+    UPDATE cardapio
+    SET disponibilidade = 0
+
+    WHERE id_item_cardapio IN (
+
+        SELECT i.id_item_cardapio
+        FROM ingredientes as i
+        JOIN estoque as e ON i.id_estoque = e.id_estoque
+        WHERE e.quantidade = 0
+    );
+END;
+
+EXEC DesabilitaItensCardapio
+
+
+
+UPDATE estoque
+SET quantidade = 0
+WHERE id_estoque = 3

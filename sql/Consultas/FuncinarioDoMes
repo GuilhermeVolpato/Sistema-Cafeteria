@@ -1,0 +1,25 @@
+CREATE FUNCTION dbo.FuncionarioDoMes 
+(
+    @DataInicio DATE,
+    @DataFim DATE
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+    SELECT TOP 1
+        funcionarios.id_funcionario,
+        funcionarios.nome,
+        funcionarios.sobrenome,
+        COUNT(DISTINCT comanda.id_comanda) AS TotalComanda,
+        SUM( DISTINCT comanda.valor_total) AS ValorTotalVendas
+    FROM 
+        funcionarios
+    INNER JOIN comanda ON funcionarios.id_funcionario = comanda.id_funcionario
+    INNER JOIN pedido ON comanda.id_comanda = pedido.id_comanda
+    WHERE pedido.data_hora_pedido BETWEEN @DataInicio AND @DataFim
+    GROUP BY funcionarios.id_funcionario, funcionarios.nome, funcionarios.sobrenome
+    ORDER BY TotalComanda DESC
+);
+
+SELECT * FROM dbo.FuncionarioDoMes('2023-06-01', '2023-06-30');

@@ -1,0 +1,51 @@
+CREATE PROCEDURE GerarRelatorioCardapio
+    @dataInicio DATE,
+    @dataFim DATE
+AS
+BEGIN
+SET NOCOUNT ON
+    CREATE TABLE #temp_relatorio_cardapio (
+        nome_item VARCHAR(30),
+        total_pedidos INT,
+        valor_total FLOAT,
+        itens_estoque_utilizados VARCHAR(255),
+        descricao_item VARCHAR(80)
+    );
+
+    INSERT INTO #temp_relatorio_cardapio (
+        nome_item,
+        total_pedidos,
+        valor_total,
+        itens_estoque_utilizados,
+        descricao_item
+    )
+    SELECT
+        c.nome_item,
+        SUM(p.quantidade) AS total_pedidos,
+        SUM(p.quantidade * c.valor) AS valor_total,
+        STUFF(
+            (
+                SELECT ', ' + e.ingrediente + ': '
+                FROM ingredientes i
+                INNER JOIN estoque e ON i.id_estoque = e.id_estoque
+                WHERE i.id_item_cardapio = c.id_item_cardapio
+                FOR XML PATH('')
+            ), 1, 2, ''
+        ) AS itens_estoque_utilizados,
+        c.descricao
+    FROM
+        pedido p
+        INNER JOIN cardapio c ON p.id_cardapio = c.id_item_cardapio
+    WHERE
+        p.data_hora_pedido >= @dataInicio
+        AND p.data_hora_pedido <= @dataFim
+    GROUP BY
+        c.nome_item, c.id_item_cardapio, c.valor, c.descricao;
+
+    SELECT * FROM #temp_relatorio_cardapio;
+
+    DROP TABLE #temp_relatorio_cardapio;
+END;
+
+
+EXECUTE GerarRelatorioCardapio '2022-06-01', '2023-06-30';

@@ -1,0 +1,17 @@
+INSERT INTO ingredientes (id_item_cardapio, id_estoque, quantidade, unidade)
+VALUES 
+	(1, 1, 50, 'g'),
+	(2, 1, 50, 'g'),
+	(2, 3, 200, 'ml'),
+	(3, 4, 200, 'g'),
+	(4, 5, 1, 'Unidade'),
+	(5, 5, 1, 'Unidade'),
+	(6, 5, 1, 'Unidade'),
+	(6, 6, 50, 'g'),
+	(6, 7, 50, 'g'),
+	(7, 1, 50, 'g'),
+	(7, 3, 200, 'ml'),
+	(8, 8, 100, 'g'), 
+	(8, 9, 2, 'Unidade'),
+	(9, 10, 2, 'Unidade'),
+	(10, 11, 50, 'g'); 

@@ -1,0 +1,116 @@
+INSERT INTO mesas (id_mesa, qtd_lugares, local, status)
+VALUES 
+	(1, 4, 'Perto da janela', 1), 
+	(2, 2, 'Perto da porta', 1), 
+	(3, 4, 'No fundo', 1), 
+	(4, 2, 'No balcão', 1), 
+	(5, 4, 'Na varanda', 1), 
+	(6, 2, 'No corredor', 1), 
+	(7, 4, 'Na entrada', 1), 
+	(8, 2, 'Perto do banheiro', 1), 
+	(9, 4, 'No mezanino', 1), 
+	(10, 2, 'Na calçada', 1);
+
+INSERT INTO funcionarios (id_funcionario, nome, sobrenome, telefone, email, cargo, data_contratacao)
+VALUES 
+	(1, 'João', 'Silva', '999999999', 'joao.silva@email.com', 'Garçom', '2023-01-01'),
+	(2, 'Maria', 'Oliveira', '888888888', 'maria.oliveira@email.com', 'Cozinheiro', '2023-02-01'),
+	(3, 'Pedro', 'Santos', '777777777', 'pedro.santos@email.com', 'Gerente', '2023-03-01'),
+	(4, 'Ana', 'Costa', '666666666', 'ana.costa@email.com', 'Atendente', '2023-04-01'),
+	(5, 'Lucas', 'Pereira', '555555555', 'lucas.pereira@email.com', 'Garçom', '2023-05-01'),
+	(6, 'Julia', 'Rocha', '444444444', 'julia.rocha@email.com', 'Cozinheiro', '2023-06-01'),
+	(7, 'Gabriel', 'Melo', '333333333', 'gabriel.melo@email.com', 'Garçom', '2023-07-01'),
+	(8, 'Carla', 'Barros', '222222222', 'carla.barros@email.com', 'Atendente', '2023-08-01'),
+	(9, 'Roberto', 'Ribeiro', '111111111', 'roberto.ribeiro@email.com', 'Garçom', '2023-09-01'),
+	(10, 'Fernanda', 'Morais', '000000000', 'fernanda.morais@email.com', 'Gerente', '2023-10-01');
+
+INSERT INTO cardapio (id_item_cardapio, nome_item, valor, descricao, categoria, disponibilidade)
+VALUES 
+	(1, 'Café Expresso', 3.00, 'Café expresso forte', 'Bebidas', 1), 
+	(2, 'Capuccino', 6.00, 'Capuccino com chantilly', 'Bebidas', 1),
+	(3, 'Chocolate Quente', 5.00, 'Chocolate quente com marshmallows', 'Bebidas', 1),
+	(4, 'Pão na Chapa', 3.00, 'Pão na chapa com manteiga', 'Comidas', 1),
+	(5, 'Torrada', 2.00, 'Torrada com geleia de morango', 'Comidas', 1),
+	(6, 'Misto Quente', 5.00, 'Misto quente com queijo e presunto', 'Comidas', 1),
+	(7, 'Café com Leite', 4.00, 'Café com leite cremoso', 'Bebidas', 1),
+	(8, 'Bolo de Chocolate', 4.50, 'Bolo de chocolate com cobertura', 'Doces', 1),
+	(9, 'Suco de Laranja', 5.00, 'Suco de laranja natural', 'Bebidas', 1),
+	(10, 'Pão de Queijo', 3.50, 'Pão de queijo mineiro', 'Comidas', 1);
+
+INSERT INTO pagamento (id_pagamento, tipo, status, taxa)
+VALUES 
+	(1, 'Pix', 1, 0.00), 
+	(2, 'Dinheiro', 1, 0.00),
+	(3, 'Cartão de Débito', 1, 0.02),
+	(4, 'Cartão de Crédito', 1, 0.03),
+	(5, 'Vale Refeição', 1, 0.05);
+
+INSERT INTO estoque (id_estoque, ingrediente, quantidade, unidade)
+VALUES 
+	(1, 'Café', 10000, 'g'), 
+	(2, 'Chantilly', 2000, 'ml'),
+	(3, 'Leite', 10000, 'ml'),
+	(4, 'Chocolate', 5000, 'g'),
+	(5, 'Pão Francês', 200, 'Unidade'),
+	(6, 'Presunto', 5000, 'g'),
+	(7, 'Queijo', 5000, 'g'),
+	(8, 'Farinha', 10000, 'g'),
+	(9, 'Ovos', 500, 'Unidade'),
+	(10, 'Laranjas', 200, 'Unidade'),
+	(11, 'Massa de Pão de Queijo', 5000, 'g');
+
+INSERT INTO ingredientes (id_item_cardapio, id_estoque, quantidade, unidade)
+VALUES 
+	(1, 1, 50, 'g'),
+	(2, 1, 50, 'g'),
+	(2, 3, 200, 'ml'),
+	(3, 4, 200, 'g'),
+	(4, 5, 1, 'Unidade'),
+	(5, 5, 1, 'Unidade'),
+	(6, 5, 1, 'Unidade'),
+	(6, 6, 50, 'g'),
+	(6, 7, 50, 'g'),
+	(7, 1, 50, 'g'),
+	(7, 3, 200, 'ml'),
+	(8, 8, 100, 'g'), 
+	(8, 9, 2, 'Unidade'),
+	(9, 10, 2, 'Unidade'),
+	(10, 11, 50, 'g'); 
+
+INSERT INTO comanda (id_comanda, id_mesa, id_pagamento, id_funcionario, valor_total)
+VALUES 
+	(1, 1, 1, 1, 0), 
+	(2, 2, 2, 3, 0),
+	(3, 3, 3, 3, 0),
+	(4, 4, 4, 4, 0),
+	(5, 5, 5, 5, 0),
+	(6, 6, 1, 6, 0),
+	(7, 7, 2, 4, 0),
+	(8, 8, 3, 7, 0),
+	(9, 9, 4, 3, 0),
+	(10, 10, 5, 4, 0);
+
+INSERT INTO pedido (id_pedido, id_comanda, id_cardapio, status, data_hora_pedido, quantidade)
+VALUES 
+	(1, 1, 1, 1, '2023-06-01 09:00:00', 2),
+	(2, 1, 4, 1, '2023-06-01 09:00:00', 1),
+	(3, 2, 1, 1, '2023-06-02 09:30:00', 1),
+	(4, 2, 5, 1, '2023-06-02 09:30:00', 1),
+	(5, 3, 2, 1, '2023-06-03 10:00:00', 1),
+	(6, 3, 4, 1, '2023-06-03 10:00:00', 1),
+	(7, 4, 1, 1, '2023-06-04 10:30:00', 1),
+	(8, 4, 5, 1, '2023-06-04 10:30:00', 1),
+	(9, 5, 2, 1, '2023-06-05 11:00:00', 1),
+	(10, 5, 6, 1, '2023-06-05 11:00:00', 1),
+	(11, 6, 1, 1, '2023-06-06 11:30:00', 1),
+	(12, 6, 5, 1, '2023-06-06 11:30:00', 1),
+	(13, 7, 2, 1, '2023-06-07 12:00:00', 1),
+	(14, 7, 6, 1, '2023-06-07 12:00:00', 1),
+	(15, 8, 3, 1, '2023-06-08 12:30:00', 1),
+	(16, 8, 4, 1, '2023-06-08 12:30:00', 1),
+	(17, 9, 2, 1, '2023-06-09 13:00:00', 1),
+	(18, 9, 5, 1, '2023-06-09 13:00:00', 1),
+	(19, 10, 1, 1, '2023-06-10 13:30:00', 1),
+	(20, 10, 6, 1, '2023-06-10 13:30:00', 1);
+
+
